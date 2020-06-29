@@ -10,7 +10,8 @@ public class Kazuate{
         int num,ans,count = 1;
         boolean isTrue;
         ans = k.genRandom();
-        System.out.println("answer:"+ans);
+        //debugprint
+        //System.out.println("answer:"+ans);
         System.out.println("数当てゲームを開始します,5回以内に当ててください");
         do{
             System.out.println(count+"回目の挑戦");
@@ -66,13 +67,19 @@ public class Kazuate{
             return true;     
         }
         else{
-            System.out.println("外れ"); 
+            if(input-ans>0){
+                System.out.println("外れ,入力した数字は答えより大きいです。"); 
+            }
+            else{
+                System.out.println("外れ,入力した数字は答えより小さいです。"); 
+            }
             //差が20より大きければ表示
             if(Math.abs(ans-input)>20){
-                System.out.println("予想した数字と答えの差は20以上あります!");
+                System.out.println("予想した数字と答えの差は20以上あります。");
             }
             return false;
         }
     }
     
 }
+
